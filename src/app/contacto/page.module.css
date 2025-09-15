@@ -1,0 +1,511 @@
+.hero {
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.85) 100%),
+    url('/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg') center/cover;
+  color: var(--white);
+  padding: 8rem 0 6rem;
+  margin-top: 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+}
+
+.hero h1 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-weight: var(--font-black);
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 2;
+}
+
+.hero p {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: var(--font-regular);
+  position: relative;
+  z-index: 2;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contactFormSection h2,
+.contactInfoSection h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+  font-family: var(--font-heading);
+}
+
+.contactFormSection p {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-secondary) 100%);
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+}
+
+.formInput,
+.formTextarea {
+  padding: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  transition: var(--transition-base);
+  font-family: var(--font-body);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1), var(--shadow-glow);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formSubmit {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.formSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formMessage {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.formMessage.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.formMessage.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contactMethod {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  border-left: 4px solid var(--gold);
+}
+
+.contactMethod:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.contactIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  color: var(--primary-blue);
+}
+
+.contactDetails h3 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+}
+
+.contactDetails p {
+  margin-bottom: 0.25rem;
+  color: var(--text-secondary);
+}
+
+.phoneLink {
+  display: block;
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  transition: var(--transition-base);
+  text-decoration: none;
+}
+
+.phoneLink:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.whatsappLink,
+.socialLink {
+  color: var(--primary-blue);
+  font-weight: 500;
+  transition: var(--transition-base);
+  text-decoration: none;
+}
+
+.whatsappLink:hover,
+.socialLink:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.officeHours {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.officeHours h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hoursItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(30, 58, 138, 0.1);
+}
+
+.hoursItem:last-child {
+  border-bottom: none;
+}
+
+.hoursItem span:first-child {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.hoursItem span:last-child {
+  color: var(--text-secondary);
+}
+
+.mapContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mapPlaceholder {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--gold);
+}
+
+.mapIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+
+.mapPlaceholder h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.mapPlaceholder p {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.ctaContent {
+  text-align: center;
+}
+
+.ctaContent h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.ctaContent p {
+  color: var(--light-blue);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.directContact {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contactFormSection {
+    order: 2;
+  }
+  
+  .contactMethod {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hoursItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .directContact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formSubmit {
+    align-self: stretch;
+  }
+}
+
+/* Google Maps Section */
+.mapSection {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.mapBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mapBackground iframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1) contrast(1.2) brightness(0.8);
+}
+
+.mapOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.mapContent {
+  width: 100%;
+}
+
+.locationInfo {
+  max-width: 600px;
+  color: var(--text-primary);
+}
+
+.locationInfo .sectionLabel {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+  color: var(--pure-black);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.locationInfo h2 {
+  font-size: 3rem;
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.locationInfo > p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.addressDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.addressItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: var(--border-thin);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-base);
+}
+
+.addressItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.addressIcon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.addressItem h4 {
+  font-size: 1.125rem;
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.addressItem p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.mapActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mapActions .btn {
+  padding: 1rem 2rem;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .mapSection {
+    height: 500px;
+  }
+  
+  .locationInfo h2 {
+    font-size: 2rem;
+  }
+  
+  .addressDetails {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .addressItem {
+    padding: 1rem;
+  }
+  
+  .mapActions {
+    flex-direction: column;
+  }
+  
+  .mapActions .btn {
+    text-align: center;
+  }
+}
