@@ -102,7 +102,7 @@ export default function Home() {
             <div className={`elegant-card ${styles.serviceCard}`}>
               <div className={styles.serviceImageContainer}>
                 <Image
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
+                  src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg"
                   alt="Derecho Previsional - Columnas de tribunal y justicia"
                   width={800}
                   height={400}
@@ -285,9 +285,11 @@ export default function Home() {
               </div>
               <div className={styles.heroImage}>
               <div className={styles.heroImageContainer}>
-                <img 
-                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                <Image
+                  src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg"
                   alt="Dr. Prado y Dra. Acevedo - Socios Fundadores"
+                  width={800}
+                  height={500}
                   className={styles.lawyerPhoto}
                 />
                 <div className={styles.heroImageOverlay}>
