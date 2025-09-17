@@ -31,7 +31,8 @@ const Navigation = () => {
           <Link href="/" className={styles.navLogo}>
             <div className={styles.logoText}>
               <span className={styles.logoMain}>Estudio Jurídico</span>
-              <span className={styles.logoSub}>Prado - Acevedo y Asociados</span>
+              <span className={styles.logoSub}>Acevedo Urturi - Prado y Asociados</span>
+              <span className={styles.logoSub}>Desde 1964</span>
             </div>
           </Link>
 

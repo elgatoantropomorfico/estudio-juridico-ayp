@@ -1,4 +1,5 @@
-
+"use client";
+import { useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AnimatedStat from '@/components/AnimatedStat';
@@ -7,6 +8,15 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
+  const servicesViewportRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollByCards = (direction: 'next' | 'prev') => {
+    const viewport = servicesViewportRef.current;
+    if (!viewport) return;
+    const visibleWidth = viewport.clientWidth;
+    const delta = Math.floor(visibleWidth / 3) + 24; // approx one card + gap
+    viewport.scrollBy({ left: direction === 'next' ? delta : -delta, behavior: 'smooth' });
+  };
   return (
     <>
       <Navigation />
@@ -24,9 +34,8 @@ export default function Home() {
                 <span className={styles.heroHighlight}> en Excelencia Legal</span>
               </h1>
               <p className={styles.heroSubtitle}>
-                Con 34 años de trayectoria, somos especialistas en derecho laboral, 
-                previsional y civil. Brindamos asesoramiento legal integral con la 
-                experiencia y profesionalismo que su caso merece.
+              Se inició en la Provincia de Santa Fé y hace más de 34 años 
+              en la Ciudad de Corrientes venimos aportando nuestra experiencia Legal
               </p>
               <div className={styles.heroActions}>
                 <a 
@@ -71,84 +80,122 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <div className={styles.sectionLabel}>Nuestros Servicios</div>
             <h2>Encontramos Soluciones Expertas<br />Para Casos Legales</h2>
-            <p>Con 34 años de experiencia, ofrecemos servicios jurídicos integrales especializados en las áreas más demandadas del derecho.</p>
+            <p>Ofrecemos servicios jurídicos integrales especializados en las áreas más demandadas del derecho.</p>
           </div>
-          <div className={styles.servicesGrid}>
-            <div className={`elegant-card ${styles.serviceCard}`}>
-              <div className={styles.serviceImageContainer}>
-                <Image
-                  src="/images/50f839ded13c53139345897857cb32eb.jpg"
-                  alt="Derecho Laboral - Firma de documentos y asesoría legal"
-                  width={800}
-                  height={400}
-                  className={styles.serviceImage}
-                />
-                <div className={styles.serviceOverlay}>
-                  <div className={styles.serviceIcon}>⚖️</div>
+          <div className={styles.servicesMarquee}>
+            <button aria-label="Anterior" className={`${styles.servicesNavBtn} ${styles.left}`} onClick={() => scrollByCards('prev')}>
+              ‹
+            </button>
+            <div ref={servicesViewportRef} className={styles.servicesViewport}>
+              <div className={styles.servicesTrack}>
+                {/* Card 1: Laboral y Previsional */}
+                <div className={`elegant-card ${styles.serviceCard}`}>
+                  <div className={styles.serviceImageContainer}>
+                    <Image
+                      src="/images/50f839ded13c53139345897857cb32eb.jpg"
+                      alt="Derecho Laboral y Previsional - Firma de documentos y asesoría legal"
+                      width={800}
+                      height={400}
+                      className={styles.serviceImage}
+                    />
+                    <div className={styles.serviceOverlay}>
+                      <div className={styles.serviceIcon}>⚖️</div>
+                    </div>
+                  </div>
+                  <div className={styles.serviceContent}>
+                    <h3>Derecho Laboral y Previsional</h3>
+                    <p>Asesoramiento integral en relaciones laborales y beneficios previsionales. Representación en reclamos laborales, jubilaciones y pensiones.</p>
+                    <div className={styles.serviceFeatures}>
+                      <span>Despidos, liquidaciones y conflictos sindicales</span>
+                      <span>Jubilaciones y pensiones (ANSES)</span>
+                      <span>Recursos administrativos y judiciales</span>
+                      <span>Negociación colectiva</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.serviceContent}>
-                <h3>Derecho Laboral</h3>
-                <p>Asesoramiento integral en relaciones laborales, despidos, indemnizaciones y conflictos sindicales con más de tres décadas de experiencia.</p>
-                <div className={styles.serviceFeatures}>
-                  <span>• Despidos y liquidaciones</span>
-                  <span>• Accidentes de trabajo</span>
-                  <span>• Conflictos sindicales</span>
-                  <span>• Negociación colectiva</span>
+
+                {/* Card 2: Riesgos del Trabajo */}
+                <div className={`elegant-card ${styles.serviceCard}`}>
+                  <div className={styles.serviceImageContainer}>
+                    <Image
+                      src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg"
+                      alt="Derecho de Riesgos del Trabajo - Trámites y gestiones"
+                      width={800}
+                      height={400}
+                      className={styles.serviceImage}
+                    />
+                    <div className={styles.serviceOverlay}>
+                      <div className={styles.serviceIcon}>🛡️</div>
+                    </div>
+                  </div>
+                  <div className={styles.serviceContent}>
+                    <h3>Derecho de Riesgos del Trabajo</h3>
+                    <p>Gestión integral de reclamos y prestaciones frente a accidentes y enfermedades laborales. Acompañamiento en todo el proceso.</p>
+                    <div className={styles.serviceFeatures}>
+                      <span>ART: trámites y apelaciones</span>
+                      <span>Incapacidades y recalificación</span>
+                      <span>Pericias médicas y comisiones</span>
+                      <span>Indemnizaciones por accidente</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3: Administrativo */}
+                <div className={`elegant-card ${styles.serviceCard}`}>
+                  <div className={styles.serviceImageContainer}>
+                    <Image
+                      src="/images/fondo.jpeg"
+                      alt="Derecho Administrativo - Procedimientos y contrataciones públicas"
+                      width={800}
+                      height={400}
+                      className={styles.serviceImage}
+                    />
+                    <div className={styles.serviceOverlay}>
+                      <div className={styles.serviceIcon}>🏛️</div>
+                    </div>
+                  </div>
+                  <div className={styles.serviceContent}>
+                    <h3>Derecho Administrativo</h3>
+                    <p>Procedimientos administrativos, contrataciones públicas, recursos y representación ante organismos estatales.</p>
+                    <div className={styles.serviceFeatures}>
+                      <span>Recursos y reclamos administrativos</span>
+                      <span>Contrataciones y licitaciones</span>
+                      <span>Contencioso administrativo</span>
+                      <span>Asesoramiento a entes públicos</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 4: Tributario */}
+                <div className={`elegant-card ${styles.serviceCard}`}>
+                  <div className={styles.serviceImageContainer}>
+                    <Image
+                      src="/images/50f839ded13c53139345897857cb32eb.jpg"
+                      alt="Derecho Tributario - Planificación y defensa fiscal"
+                      width={800}
+                      height={400}
+                      className={styles.serviceImage}
+                    />
+                    <div className={styles.serviceOverlay}>
+                      <div className={styles.serviceIcon}>💼</div>
+                    </div>
+                  </div>
+                  <div className={styles.serviceContent}>
+                    <h3>Derecho Tributario</h3>
+                    <p>Planificación fiscal, recursos ante organismos recaudadores y defensa en sede administrativa y judicial.</p>
+                    <div className={styles.serviceFeatures}>
+                      <span>Planificación y auditorías</span>
+                      <span>Recursos ante AFIP y fiscos provinciales</span>
+                      <span>Moratorias y planes de pago</span>
+                      <span>Cumplimiento normativo</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <div className={`elegant-card ${styles.serviceCard}`}>
-              <div className={styles.serviceImageContainer}>
-                <Image
-                  src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg"
-                  alt="Derecho Previsional - Columnas de tribunal y justicia"
-                  width={800}
-                  height={400}
-                  className={styles.serviceImage}
-                />
-                <div className={styles.serviceOverlay}>
-                  <div className={styles.serviceIcon}>🏛️</div>
-                </div>
-              </div>
-              <div className={styles.serviceContent}>
-                <h3>Derecho Previsional</h3>
-                <p>Especialistas en jubilaciones, pensiones y beneficios previsionales. Gestionamos todos los trámites ante ANSES y organismos competentes.</p>
-                <div className={styles.serviceFeatures}>
-                  <span>• Jubilaciones ordinarias</span>
-                  <span>• Pensiones por invalidez</span>
-                  <span>• Recursos administrativos</span>
-                  <span>• Asesoramiento ANSES</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className={`elegant-card ${styles.serviceCard}`}>
-              <div className={styles.serviceImageContainer}>
-                <Image
-                  src="/images/fondo.jpeg"
-                  alt="Derecho Civil - Balanza de la justicia y libros"
-                  width={800}
-                  height={400}
-                  className={styles.serviceImage}
-                />
-                <div className={styles.serviceOverlay}>
-                  <div className={styles.serviceIcon}>📋</div>
-                </div>
-              </div>
-              <div className={styles.serviceContent}>
-                <h3>Derecho Civil</h3>
-                <p>Asesoramiento en contratos, sucesiones, daños y perjuicios, y todas las ramas del derecho civil con enfoque personalizado.</p>
-                <div className={styles.serviceFeatures}>
-                  <span>• Contratos civiles</span>
-                  <span>• Sucesiones</span>
-                  <span>• Daños y perjuicios</span>
-                  <span>• Mediación</span>
-                </div>
-              </div>
-            </div>
-            
+            <button aria-label="Siguiente" className={`${styles.servicesNavBtn} ${styles.right}`} onClick={() => scrollByCards('next')}>
+              ›
+            </button>
           </div>
         </div>
       </section>
@@ -172,9 +219,9 @@ export default function Home() {
                   <h3>Evaluación Gratuita</h3>
                   <p>Análisis inicial completo sin costo de su situación legal específica</p>
                   <div className={styles.cardFeatures}>
-                    <span>• Revisión de documentos</span>
-                    <span>• Análisis de viabilidad</span>
-                    <span>• Recomendaciones iniciales</span>
+                    <span>Revisión de documentos</span>
+                    <span>Análisis de viabilidad</span>
+                    <span>Recomendaciones iniciales</span>
                   </div>
                 </div>
               </div>
@@ -187,9 +234,9 @@ export default function Home() {
                   <h3>Estrategia Legal</h3>
                   <p>Plan personalizado y detallado para resolver su caso de manera efectiva</p>
                   <div className={styles.cardFeatures}>
-                    <span>• Estrategia personalizada</span>
-                    <span>• Cronograma de acciones</span>
-                    <span>• Estimación de tiempos</span>
+                    <span>Estrategia personalizada</span>
+                    <span>Cronograma de acciones</span>
+                    <span>Estimación de tiempos</span>
                   </div>
                 </div>
               </div>
@@ -202,9 +249,9 @@ export default function Home() {
                   <h3>Confidencialidad</h3>
                   <p>Absoluta reserva y privacidad garantizada en todo el proceso legal</p>
                   <div className={styles.cardFeatures}>
-                    <span>• Secreto profesional</span>
-                    <span>• Información protegida</span>
-                    <span>• Privacidad total</span>
+                    <span>Secreto profesional</span>
+                    <span>Información protegida</span>
+                    <span>Privacidad total</span>
                   </div>
                 </div>
               </div>
@@ -217,9 +264,9 @@ export default function Home() {
                   <h3>Comunicación Directa</h3>
                   <p>Contacto inmediato y seguimiento constante durante todo el proceso</p>
                   <div className={styles.cardFeatures}>
-                    <span>• WhatsApp disponible</span>
-                    <span>• Respuesta rápida</span>
-                    <span>• Seguimiento continuo</span>
+                    <span>WhatsApp disponible</span>
+                    <span>Respuesta rápida</span>
+                    <span>Seguimiento continuo</span>
                   </div>
                 </div>
               </div>
@@ -393,8 +440,8 @@ export default function Home() {
               </Link>
               <div className={styles.contactQuick}>
                 <p>O llamanos directamente:</p>
-                <a href="tel:3794770954" className={styles.phoneLink}>
-                  📞 3794770954 / 3794606123
+                <a href="tel:3794606123" className={styles.phoneLink}>
+                  📞 3794606123
                 </a>
               </div>
             </div>
