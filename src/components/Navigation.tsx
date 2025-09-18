@@ -49,7 +49,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <Link href="https://wa.me/543794606123" target="_blank" rel="noopener noreferrer" className={`btn btn-gold ${styles.navCta}`}>
-            Consulta Online
+            Consulta Online Gratuita
           </Link>
 
           {/* Mobile Menu Button */}
@@ -84,7 +84,7 @@ const Navigation = () => {
               className={`btn btn-gold ${styles.mobileMenuCta}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Consulta Online
+              Consulta Online Gratuita
             </Link>
           </div>
         )}

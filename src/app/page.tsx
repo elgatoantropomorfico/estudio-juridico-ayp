@@ -68,7 +68,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn btn-gold btn-large"
                 >
-                  Consulta Online
+                  Consulta Online Gratuita
                 </a>
                 <Link href="/nosotros" className="btn btn-outline btn-large">
                   Conocer Más
@@ -339,7 +339,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn btn-gold btn-large"
                 >
-                  Agendar Consulta Online
+                  Consulta Online Gratuita
                 </a>
               </div>
             </div>
