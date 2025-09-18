@@ -210,7 +210,7 @@ export default function Nosotros() {
             <div className={styles.teamMember}>
               <div className={styles.memberPhoto}>
                 <Image 
-                  src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg" 
+                  src="/images/marina.jpeg" 
                   alt="Marina Belén Díez"
                   width={150} 
                   height={150} 
