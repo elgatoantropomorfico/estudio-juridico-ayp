@@ -10,11 +10,11 @@ const Footer = () => {
           <div className={styles.footerSection}>
             <div className={styles.footerLogo}>
               <h3>Estudio Jurídico</h3>
-              <p className={styles.footerSubtitle}>Prado - Acevedo y Asociados</p>
+              <p className={styles.footerSubtitle}>Acevedo Urturi - Prado y Asociados</p>
             </div>
             <p className={styles.footerDescription}>
-              Más de 25 años de trayectoria defendiendo tus derechos en Corrientes Capital.
-              Especialistas en Derecho Administrativo, Tributario, RRHH y Previsional.
+            Con experiencia en la Cámara de Diputados y en el Instituto de Previsión Social, nos especializamos 
+            en Derecho Laboral y Derecho Inmobiliario, con formación en Teoría y Técnica del Proceso Judicial.
             </p>
           </div>
 

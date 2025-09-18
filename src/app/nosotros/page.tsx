@@ -57,7 +57,7 @@ export default function Nosotros() {
     {
       id: 5,
       year: '2018-2025',
-      title: 'Municipalidad de Corrientes',
+      title: 'Instituto de Previsión Social y Cámara de Diputados',
       position: 'top',
       content: {
         title: 'Consolidación en el Sector Público',
@@ -104,9 +104,9 @@ export default function Nosotros() {
                 <strong>ética</strong> y <strong>experiencia</strong>.
               </p>
               <p>
-                Durante más de 25 años, hemos mantenido un compromiso inquebrantable con 
+                Durante más de 34 años, hemos mantenido un compromiso inquebrantable con 
                 nuestros clientes, brindando asesoramiento legal de la más alta calidad, 
-                siempre con transparencia, honestidad y dedicación absoluta.
+                siempre con transparencia, honestidad, ética y excelencia.
               </p>
               <p>
                 Nuestro enfoque se centra en comprender profundamente las necesidades específicas 
@@ -176,11 +176,11 @@ export default function Nosotros() {
               <div className={styles.memberInfo}>
                 <h3>Doctor Jose Enrique Prado</h3>
                 <p className={styles.memberTitle}>Socio Fundador</p>
-                <p className={styles.memberSpecialties}>Especialista en Derecho Administrativo y Tributario</p>
+                <p className={styles.memberSpecialties}>Especialista en Derecho Laboral y Riesgos del Trabajador</p>
                 <p className={styles.memberDescription}>
-                  Con más de 25 años de experiencia, ha liderado casos complejos en el ámbito 
-                  administrativo y tributario, representando tanto a empresas privadas como 
-                  organismos públicos.
+                Con más de 34 años de trayectoria, ha acompañado y representado
+                 a trabajadores y empresas en conflictos laborales y en materia de riesgos del trabajo,
+                defendiendo con solidez sus derechos y obligaciones.
                 </p>
               </div>
             </div>
@@ -202,6 +202,28 @@ export default function Nosotros() {
                 <p className={styles.memberDescription}>
                   Directora de Legales y Previsional en IPS Corrientes, con vasta experiencia 
                   en recursos humanos y relaciones laborales en el sector corporativo.
+                </p>
+              </div>
+            </div>
+
+            {/* Nueva Integrante */}
+            <div className={styles.teamMember}>
+              <div className={styles.memberPhoto}>
+                <Image 
+                  src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg" 
+                  alt="Marina Belén Díez"
+                  width={150} 
+                  height={150} 
+                  className={styles['member-img']}
+                />
+              </div>
+              <div className={styles.memberInfo}>
+                <h3>Marina Belén Díez</h3>
+                <p className={styles.memberTitle}>Escribana Pública • Abogada</p>
+                <p className={styles.memberSpecialties}>Escribanía y Derecho Inmobiliario</p>
+                <p className={styles.memberDescription}>
+                Ejerce la tarea de Procuración, maneja las bases de datos 
+                de las diferentes causas, encargada de consultas por correo electrónico y on-line.
                 </p>
               </div>
             </div>

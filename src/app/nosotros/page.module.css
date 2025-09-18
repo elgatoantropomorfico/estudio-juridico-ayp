@@ -165,8 +165,8 @@
 
 .teamGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 2rem;
   margin-top: 3rem;
 }
 
@@ -188,8 +188,8 @@
 }
 
 .memberPhoto {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   overflow: hidden;

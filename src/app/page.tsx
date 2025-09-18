@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AnimatedStat from '@/components/AnimatedStat';
@@ -9,14 +9,38 @@ import styles from './page.module.css';
 
 export default function Home() {
   const servicesViewportRef = useRef<HTMLDivElement | null>(null);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const totalCards = 4;
 
-  const scrollByCards = (direction: 'next' | 'prev') => {
+  const getCardStep = () => {
+    const viewport = servicesViewportRef.current;
+    if (!viewport) return 0;
+    const card = viewport.querySelector(`.${styles.serviceCard}`) as HTMLElement | null;
+    const track = viewport.querySelector(`.${styles.servicesTrack}`) as HTMLElement | null;
+    const gapStr = track ? getComputedStyle(track).gap || getComputedStyle(track).columnGap : '0px';
+    const gap = parseFloat(gapStr);
+    const cardWidth = card ? card.getBoundingClientRect().width : Math.floor(viewport.clientWidth / 3);
+    return cardWidth + (isNaN(gap) ? 0 : gap);
+  };
+
+  const scrollToIndex = (idx: number) => {
     const viewport = servicesViewportRef.current;
     if (!viewport) return;
-    const visibleWidth = viewport.clientWidth;
-    const delta = Math.floor(visibleWidth / 3) + 24; // approx one card + gap
-    viewport.scrollBy({ left: direction === 'next' ? delta : -delta, behavior: 'smooth' });
+    const step = getCardStep();
+    viewport.scrollTo({ left: step * idx, behavior: 'smooth' });
   };
+
+  const handleArrow = (direction: 'next' | 'prev') => {
+    const next = direction === 'next' ? (currentIdx + 1) % totalCards : (currentIdx - 1 + totalCards) % totalCards;
+    setCurrentIdx(next);
+    scrollToIndex(next);
+  };
+
+  useEffect(() => {
+    const onResize = () => scrollToIndex(currentIdx);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [currentIdx]);
   return (
     <>
       <Navigation />
@@ -83,10 +107,18 @@ export default function Home() {
             <p>Ofrecemos servicios jurídicos integrales especializados en las áreas más demandadas del derecho.</p>
           </div>
           <div className={styles.servicesMarquee}>
-            <button aria-label="Anterior" className={`${styles.servicesNavBtn} ${styles.left}`} onClick={() => scrollByCards('prev')}>
+            <button aria-label="Anterior" className={`${styles.servicesNavBtn} ${styles.left}`} onClick={() => handleArrow('prev')}>
               ‹
             </button>
-            <div ref={servicesViewportRef} className={styles.servicesViewport}>
+            <div
+              ref={servicesViewportRef}
+              className={styles.servicesViewport}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowRight') handleArrow('next');
+                if (e.key === 'ArrowLeft') handleArrow('prev');
+              }}
+            >
               <div className={styles.servicesTrack}>
                 {/* Card 1: Laboral y Previsional */}
                 <div className={`elegant-card ${styles.serviceCard}`}>
@@ -106,7 +138,7 @@ export default function Home() {
                     <h3>Derecho Laboral y Previsional</h3>
                     <p>Asesoramiento integral en relaciones laborales y beneficios previsionales. Representación en reclamos laborales, jubilaciones y pensiones.</p>
                     <div className={styles.serviceFeatures}>
-                      <span>Despidos, liquidaciones y conflictos sindicales</span>
+                      <span>Despidos, liquidaciones y sindicatos </span>
                       <span>Jubilaciones y pensiones (ANSES)</span>
                       <span>Recursos administrativos y judiciales</span>
                       <span>Negociación colectiva</span>
@@ -193,9 +225,22 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <button aria-label="Siguiente" className={`${styles.servicesNavBtn} ${styles.right}`} onClick={() => scrollByCards('next')}>
+            <button aria-label="Siguiente" className={`${styles.servicesNavBtn} ${styles.right}`} onClick={() => handleArrow('next')}>
               ›
             </button>
+            <div className={styles.servicesIndicators}>
+              {Array.from({ length: totalCards }).map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Ir a tarjeta ${i + 1}`}
+                  className={`${styles.dot} ${currentIdx === i ? styles.active : ''}`}
+                  onClick={() => {
+                    setCurrentIdx(i);
+                    scrollToIndex(i);
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -344,7 +389,10 @@ export default function Home() {
                     <div className={styles.heroCardIcon}>⚖️</div>
                     <div className={styles.heroCardContent}>
                       <h3>Dr. Prado & Dra. Acevedo</h3>
-                      <p>Socios Fundadores - 34 años de experiencia</p>
+                      <p>Socios Fundadores:
+                        Roberto Baltazar Acevedo Urturi - 
+                        María Cristina Acevedo Urturi - 
+                        José Enrique Prado</p>
                     </div>
                   </div>
                 </div>
