@@ -88,7 +88,7 @@ export default function Home() {
                 <div className={styles.heroCard}>
                   <div className={styles.heroCardIcon}>⚖️</div>
                   <div className={styles.heroCardText}>
-                    <strong>Dr. Prado & Dra. Acevedo</strong>
+                    <strong>Dra. María Cristina Acevedo Urturi & Dr.José Enrique Prado</strong>
                     <span>34+ años de experiencia</span>
                   </div>
                 </div>
@@ -379,7 +379,7 @@ export default function Home() {
               <div className={styles.heroImageContainer}>
                 <Image
                   src="/images/WhatsApp Image 2025-09-15 at 02.16.13.jpeg"
-                  alt="Dr. Prado y Dra. Acevedo - Socios Fundadores"
+                  alt="Dra. María Cristina Acevedo Urturi y Dr. José Enrique Prado - Socios Fundadores"
                   width={800}
                   height={500}
                   className={styles.lawyerPhoto}
@@ -388,7 +388,7 @@ export default function Home() {
                   <div className={styles.heroCard}>
                     <div className={styles.heroCardIcon}>⚖️</div>
                     <div className={styles.heroCardContent}>
-                      <h3>Dr. Prado & Dra. Acevedo</h3>
+                      <h3>Dra. María Cristina Acevedo Urturi y Dr. José Enrique Prado</h3>
                       <p>Socios Fundadores:
                         Roberto Baltazar Acevedo Urturi - 
                         María Cristina Acevedo Urturi - 

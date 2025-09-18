@@ -17,7 +17,7 @@ export default function Nosotros() {
       position: 'top',
       content: {
         title: 'Inicio de una Trayectoria Excepcional',
-        description: 'Dr. Prado y Dra. Acevedo fundan el estudio jurídico con la visión de brindar asesoramiento legal integral y de excelencia.',
+        description: 'Dra. María Cristina Acevedo Urturi y Dr. José Enrique Prado fundan el estudio jurídico con la visión de brindar asesoramiento legal integral y de excelencia.',
         achievements: ['Primeros casos en derecho laboral', 'Establecimiento de metodología de trabajo', 'Construcción de red de contactos profesionales']
       }
     },

@@ -132,7 +132,7 @@ export default function Experiencia() {
           <div className={styles.detailedTimeline}>
             <div className={`${styles.timelinePeriod} ${styles.current}`}>
               <div className={styles.periodHeader}>
-                <h3>2018 - Presente</h3>
+                <h3>2018 - 2025</h3>
                 <span className={styles.periodDuration}>7 años</span>
               </div>
               <div className="period-content">
@@ -149,7 +149,7 @@ export default function Experiencia() {
                     <div className={styles.achievements}>
                       <div className={styles.achievementItem}>
                         <span className={styles.achievementIcon}>⚖️</span>
-                        <span>Gestión de más de 50,000 expedientes previsionales</span>
+                        <span>Gestión de expedientes previsionales</span>
                       </div>
                       <div className={styles.achievementItem}>
                         <span className={styles.achievementIcon}>📋</span>
@@ -184,7 +184,7 @@ export default function Experiencia() {
                     <div className={styles.achievements}>
                       <div className={styles.achievementItem}>
                         <span className={styles.achievementIcon}>👥</span>
-                        <span>Gestión legal de más de 2,000 empleados</span>
+                        <span>Gestión legal de empleados</span>
                       </div>
                       <div className={styles.achievementItem}>
                         <span className={styles.achievementIcon}>⚖️</span>
@@ -237,7 +237,7 @@ export default function Experiencia() {
 
             <div className={styles.timelinePeriod}>
               <div className={styles.periodHeader}>
-                <h3>2001 - Presente</h3>
+                <h3>2001 - 2016</h3>
                 <span className={styles.periodDuration}>24 años</span>
               </div>
               <div className="period-content">
@@ -353,7 +353,7 @@ export default function Experiencia() {
           
           <div className={styles.metricsGrid}>
             <div className={styles.metricCard}>
-              <div className={styles.metricNumber}>25+</div>
+              <div className={styles.metricNumber}>34+</div>
               <div className={styles.metricLabel}>Años de experiencia</div>
               <div className={styles.metricDescription}>Más de dos décadas defendiendo derechos</div>
             </div>

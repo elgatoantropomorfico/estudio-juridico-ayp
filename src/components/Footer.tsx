@@ -13,9 +13,15 @@ const Footer = () => {
               <p className={styles.footerSubtitle}>Acevedo Urturi - Prado y Asociados</p>
             </div>
             <p className={styles.footerDescription}>
-            Con experiencia en la Cámara de Diputados y en el Instituto de Previsión Social, nos especializamos 
-            en Derecho Laboral y Derecho Inmobiliario, con formación en Teoría y Técnica del Proceso Judicial.
-            </p>
+            Especialistas en:
+            <br />
+            Derecho Laboral y Previsional
+            <br />
+            Derecho de Riesgos del Trabajo 
+            <br />
+            Derecho Administrativo 
+            <br />
+            Derecho Tributario</p>
           </div>
 
           <div className={styles.footerSection}>
