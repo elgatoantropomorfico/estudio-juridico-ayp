@@ -159,7 +159,6 @@ export default function Contacto() {
                   <div className="contact-icon">📞</div>
                   <div className="contact-details">
                     <h3>Teléfonos</h3>
-                    <a href="tel:3794770954" className="phone-link">3794770954</a>
                     <a href="tel:3794606123" className="phone-link">3794606123</a>
                   </div>
                 </div>

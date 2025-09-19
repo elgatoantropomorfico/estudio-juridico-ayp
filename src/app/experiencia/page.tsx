@@ -33,7 +33,7 @@ export default function Experiencia() {
                 <p>
                   Especialistas en procedimientos administrativos, contrataciones públicas, 
                   recursos administrativos y contencioso administrativo. Asesoramos tanto 
-                  a entidades públicas como privadas en sus relaciones con la administración.
+                  a entidades públicas como privadas en sus relaciones con la administración púlbica Nacional.
                 </p>
                 <div className={styles.specialtyServices}>
                   <h4>Servicios especializados:</h4>
@@ -62,7 +62,7 @@ export default function Experiencia() {
                   <h4>Servicios incluidos:</h4>
                   <ul>
                     <li>Planificación fiscal estratégica</li>
-                    <li>Defensa ante AFIP, ARBA y organismos provinciales</li>
+                    <li>Defensa ante AFIP, ARBA</li>
                     <li>Recursos de reconsideración y apelación</li>
                     <li>Moratorias y planes de pago</li>
                     <li>Auditorías tributarias</li>
@@ -108,11 +108,11 @@ export default function Experiencia() {
                 <div className={styles.specialtyServices}>
                   <h4>Servicios incluidos:</h4>
                   <ul>
-                    <li>Trámites jubilatorios y pensiones</li>
+                    <li>Trámites jubilatorios y pensiones (ANSES)</li>
                     <li>Recursos ante ANSES</li>
-                    <li>Reajustes previsionales</li>
-                    <li>Aportes y contribuciones</li>
-                    <li>Beneficios de la seguridad social</li>
+                    <li>Reajustes previsionales (ANSES)</li>
+                    <li>Aportes y contribuciones (ANSES)</li>
+                    <li>Beneficios de la seguridad social (ANSES)</li>
                   </ul>
                 </div>
               </div>

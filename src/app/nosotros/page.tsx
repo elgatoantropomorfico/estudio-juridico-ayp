@@ -99,7 +99,7 @@ export default function Nosotros() {
             <div className="philosophy-text">
               <h2>Nuestra Filosofía</h2>
               <p>
-                En Estudio Jurídico Prado - Acevedo y Asociados, creemos firmemente que la 
+                En Estudio Jurídico Acevedo Urturi - Prado y Asociados, creemos firmemente que la 
                 justicia se construye sobre tres pilares fundamentales: <strong>confianza</strong>, 
                 <strong>ética</strong> y <strong>experiencia</strong>.
               </p>
