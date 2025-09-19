@@ -41,6 +41,8 @@ const Footer = () => {
               <li>Derecho Tributario</li>
               <li>Derecho Laboral</li>
               <li>Derecho Previsional</li>
+              <li>Derecho de Riesgos del Trabajo</li>
+              <li>Derecho Inmobiliario</li>
             </ul>
           </div>
 
@@ -49,7 +51,7 @@ const Footer = () => {
             <div className={styles.contactInfo}>
               <p>📍 San Lorenzo 2279</p>
               <p>Corrientes Capital</p>
-              <p>📞 3794770954 / 3794606123</p>
+              <p>📞 3794606123</p>
               <p>📱 WhatsApp disponible</p>
               <p>📷 @EstudioJuridicoPradoAcevedo</p>
             </div>
