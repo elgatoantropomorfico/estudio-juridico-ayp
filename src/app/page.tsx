@@ -136,7 +136,7 @@ export default function Home() {
                   </div>
                   <div className={styles.serviceContent}>
                     <h3>Derecho Laboral y Previsional</h3>
-                    <p>Asesoramiento integral en relaciones laborales y beneficios previsionales. Representación en reclamos laborales, jubilaciones y pensiones.</p>
+                    <p>Asesoramiento integral en relaciones laborales y beneficios previsionales. Representación en reclamos laborales, jubilaciones y pensiones (ANSES).</p>
                     <div className={styles.serviceFeatures}>
                       <span>Despidos, liquidaciones y sindicatos </span>
                       <span>Jubilaciones y pensiones (ANSES)</span>
@@ -419,7 +419,9 @@ export default function Home() {
                   <div className={styles.logoIcon}>🏢</div>
                 </div>
                 <div className={styles.companyInfo}>
-                  <h4>Telecom Argentina</h4>
+                  <h4>Telecom - Arnet - Personal</h4>
+                  <span className={styles.testimonialSector}></span>
+                
                   <span className={styles.testimonialPeriod}>1998 - 2008</span>
                 </div>
               </div>
@@ -439,7 +441,7 @@ export default function Home() {
                   <div className={styles.logoIcon}>💳</div>
                 </div>
                 <div className={styles.companyInfo}>
-                  <h4>Rapipago</h4>
+                  <h4>Gire - Rapipago</h4>
                   <span className={styles.testimonialPeriod}>2007 - 2015</span>
                 </div>
               </div>
